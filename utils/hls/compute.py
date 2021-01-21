@@ -114,7 +114,7 @@ def compute_tile_median(ds, groupby, qa_name):
         .where(ds >= 0)
         .groupby(groupby)
         .median(keep_attrs=True)
-        .chunk({'month': 1, 'y': 3660, 'x': 3660})  # groupby + median changes chunk size...lets change it back
+        .chunk({'year': 1, 'y': 3660, 'x': 3660})  # groupby + median changes chunk size...lets change it back
     )
 
 
